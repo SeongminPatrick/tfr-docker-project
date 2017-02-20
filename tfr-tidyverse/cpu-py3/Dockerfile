@@ -1,4 +1,4 @@
-FROM mrchypark/tfr-rstudo:1.0.0-cpu-py3
+FROM mrchypark/tfr-rstudio:1.0.0-cpu-py3
 MAINTAINER ChanYub Park <mrchypark@gmail.com>
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
