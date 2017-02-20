@@ -1,6 +1,6 @@
 # tfr-docker-project
 
-Docker container for [RStudio Server 1.0.44][3] with [R 3.3.2][8]
+Docker container for [RStudio Server 1.0.44][3] with [R 3.3.2][8], [tensorflow 1.0.0][10]
 
 "RStudio is an integrated development environment for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management."
 
@@ -69,3 +69,4 @@ For additional info about us and our projects check our site [www.quantumobject.
 [7]:https://rstudio.quantumobject.org
 [8]:http://www.r-project.org
 [9]:https://www.quantumobject.org
+[10]:https://www.tensorflow.org/
