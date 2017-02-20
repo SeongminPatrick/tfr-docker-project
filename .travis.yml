@@ -5,8 +5,8 @@ services:
 
 ## Make sure all containers build without error.
 before_install: 
-  - docker build -t mrchypark/tfr-baseimage tfr-base/.
-  - docker build -t mrchypark/tfr-rstudio tfr-rstudio/.
+  - docker build -t mrchypark/tfr-baseimage:1.0.0-gpu-py2 tfr-base/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-gpu-py2 tfr-rstudio/.
 
 ## A few simple / crude tests
 script:
