@@ -1,4 +1,4 @@
-FROM gcr.io/tensorflow/tensorflow:1.0.0-gpu
+FROM gcr.io/tensorflow/tensorflow:1.0.0
 MAINTAINER ChanYub Park <mrchypark@gmail.com>
 
 ADD . /build
