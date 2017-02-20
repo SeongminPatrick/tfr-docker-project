@@ -5,16 +5,18 @@ services:
 
 ## Make sure all containers build without error.
 before_install: 
-  - docker build -t mrchypark/tfr-baseimage:1.0.0-gpu-py2 tfr-base-gpu-py2/.
-  - docker build -t mrchypark/tfr-rstudio:1.0.0-gpu-py2 tfr-rstudio-gpu-py2/.
-  - docker build -t mrchypark/tfr-baseimage:1.0.0-gpu-py3 tfr-base-gpu-py3/.
-  - docker build -t mrchypark/tfr-rstudio:1.0.0-gpu-py3 tfr-rstudio-gpu-py3/.
-  - docker build -t mrchypark/tfr-baseimage:1.0.0-cpu-py2 tfr-base-cpu-py2/.
-  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py2 tfr-rstudio-cpu-py2/.
-  - docker build -t mrchypark/tfr-baseimage:1.0.0-cpu-py3 tfr-base-cpu-py3/.
-  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-rstudio-cpu-py3/.
-
-
+  - docker build -t mrchypark/tfr-baseimage:1.0.0-gpu-py2 tfr-base/gpu-py2/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-gpu-py2 tfr-rstudio/gpu-py2/.
+  - docker build -t mrchypark/tfr-baseimage:1.0.0-gpu-py3 tfr-base/gpu-py3/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-gpu-py3 tfr-rstudio/gpu-py3/.
+  - docker build -t mrchypark/tfr-baseimage:1.0.0-cpu-py2 tfr-base/cpu-py2/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py2 tfr-rstudio/cpu-py2/.
+  - docker build -t mrchypark/tfr-baseimage:1.0.0-cpu-py3 tfr-base/cpu-py3/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-rstudio/cpu-py3/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-tidyverse/cpu-py2/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-tidyverse/cpu-py3/.
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-tidyverse/gpu-py2/. 
+  - docker build -t mrchypark/tfr-rstudio:1.0.0-cpu-py3 tfr-tidyverse/gpu-py3/.  
 
 ## A few simple / crude tests
 script:
@@ -26,3 +28,7 @@ script:
   - docker run -ti mrchypark/tfr-rstudio:1.0.0-cpu-py3 python -V
   - docker run -ti mrchypark/tfr-rstudio:1.0.0-gpu-py2 python -V
   - docker run -ti mrchypark/tfr-rstudio:1.0.0-gpu-py3 python -V
+  - docker run -ti mrchypark/tfr-tidyverse:1.0.0-cpu-py2 python -V
+  - docker run -ti mrchypark/tfr-tidyverse:1.0.0-cpu-py3 python -V
+  - docker run -ti mrchypark/tfr-tidyverse:1.0.0-gpu-py2 python -V
+  - docker run -ti mrchypark/tfr-tidyverse:1.0.0-gpu-py3 python -V
