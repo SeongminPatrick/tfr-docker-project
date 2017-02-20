@@ -28,7 +28,7 @@ To install docker in Ubuntu 14.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 8787:8787 mrchypark/tfr-rstudio:tag_name_what_you_want
+    $ docker run -d -p 8787:8787 mrchypark/tfr-rstudio:<tag_name_what_you_want>
     
 Tag lists is [here](https://hub.docker.com/r/mrchypark/tfr-rstudio/tags/)    
     
@@ -61,7 +61,7 @@ note : It was created by using quantumobject/docker-baseimage and installing the
 
 ## More Info
 
-About RStudio Server[www.rstudio.com][1]
+About RStudio Server [www.rstudio.com][1]
 
 To help improve this container [tfr-rstudio][5]
 
@@ -71,7 +71,7 @@ Example of [RStudio Server][7]
 
 Tensorflow framework [www.tensorflow.org][10]
 
-For additional info about us and our projects check our site [www.quantumobject.org][9]
+For additional info about quantumobject projects check site [www.quantumobject.org][9]
 
 # License
 
