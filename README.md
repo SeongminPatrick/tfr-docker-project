@@ -30,7 +30,7 @@ To run container use the command below:
 
     $ docker run -d -p 8787:8787 mrchypark/tfr-rstudio:<tag_name_what_you_want>
     
-Tag lists is [here](https://hub.docker.com/r/mrchypark/tfr-rstudio/tags/)    
+Tags are [here](https://hub.docker.com/r/mrchypark/tfr-rstudio/tags/).
     
 This will create docker-rstudio container with login/password guest/guest.
 
