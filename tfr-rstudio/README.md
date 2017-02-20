@@ -1,4 +1,4 @@
-# docker-rstudio
+# tfr-docker-project
 
 Docker container for [RStudio Server 1.0.44][3] with [R 3.3.2][8]
 
@@ -19,7 +19,7 @@ To install docker in Ubuntu 14.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 8787:8787 quantumobject/docker-rstudio
+    $ docker run -d -p 8787:8787 mrchypark/tfr-rstudio:
 
 This will create docker-rstudio container with login/password guest/guest.
 
@@ -52,7 +52,7 @@ note : It was created by using quantumobject/docker-baseimage and installing the
 
 About RStudio Server[www.rstudio.com][1]
 
-To help improve this container [docker-rstudio][5]
+To help improve this container [tfr-rstudio][5]
 
 RStudio Server [Documentation][6]
 
@@ -64,7 +64,7 @@ For additional info about us and our projects check our site [www.quantumobject.
 [2]:https://www.docker.com
 [3]:http://www.rstudio.com/products/rstudio/download-server
 [4]:http://docs.docker.com
-[5]:https://github.com/QuantumObject/docker-rstudio
+[5]:https://github.com/mrchypark/tfr-docker-project
 [6]:https://support.rstudio.com/hc/en-us/categories/200035113-Documentation
 [7]:https://rstudio.quantumobject.org
 [8]:http://www.r-project.org
