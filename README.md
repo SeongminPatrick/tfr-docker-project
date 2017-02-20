@@ -7,6 +7,15 @@ Github repos are here.([tensorflow](https://github.com/tensorflow/tensorflow/tre
 
 tfr means tensorflow with rstudio uring r.
 
+## Status ##
+
+## Docker Containers ##
+
+| Docker Container Source on GitHub      | Docker Hub Build Status and URL                           | Image Size
+| :------------------------------------  | :-----------------------------------------                | :--------------
+| tfr-baseimage                          | [good](https://registry.hub.docker.com/u/mrchypark/tfr-baseimage/)  | [![Layers and Size](https://images.microbadger.com/badges/image/mrchypark/tfr-baseimage.svg)](https://registry.hub.docker.com/u/mrchypark/tfr-baseimage/)
+| tfr-rstudio                            | [good](https://registry.hub.docker.com/u/mrchypark/tfr-rstudio/) | [![Layers and Size](https://images.microbadger.com/badges/image/mrchypark/tfr-rstudio.svg)](https://registry.hub.docker.com/u/mrchypark/tfr-rstudio/)
+
 # info
 
 Docker container for [RStudio Server 1.0.44][3] with [R 3.3.2][8], [tensorflow 1.0.0][10]
