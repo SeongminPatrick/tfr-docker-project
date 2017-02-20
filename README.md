@@ -1,12 +1,10 @@
 # tfr-docker-project
 
-tfr-docker-project based tensorflow + QuantumObject. Thx all!
+tfr-docker-project based [tensorflow](https://www.tensorflow.org/) + [QuantumObject](https://www.quantumobject.org/). Thx all!
+Github repos are here.([tensorflow](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker), [QuantumObject](https://github.com/QuantumObject/docker-baseimage))
 
 tfr means tensorflow with rstudio uring r.
 
-please just use mrchypark/tfr-rstudio:1.0.0-gpu-py2.
+# License
 
-tfr-baseimage
-================
-[![](https://images.microbadger.com/badges/image/mrchypark/tfr-baseimage.svg)](https://microbadger.com/images/mrchypark/tfr-baseimage "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/mrchypark/tfr-baseimage.svg)](https://microbadger.com/images/mrchypark/tfr-baseimage "Get your own version badge on microbadger.com")
+The Dockerfiles in this repository are licensed under the MIT license.
