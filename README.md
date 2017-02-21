@@ -83,6 +83,8 @@ Example of [RStudio Server][7]
 
 Tensorflow framework [www.tensorflow.org][10]
 
+Tensorflow package for R [Documentation][11]
+
 For additional info about quantumobject projects check site [www.quantumobject.org][9]
 
 # License
@@ -99,3 +101,4 @@ The Dockerfiles in this repository are licensed under the MIT license.
 [8]:http://www.r-project.org
 [9]:https://www.quantumobject.org
 [10]:https://www.tensorflow.org/
+[11]:https://rstudio.github.io/tensorflow/
