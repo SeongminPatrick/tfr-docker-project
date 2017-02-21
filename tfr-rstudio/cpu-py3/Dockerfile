@@ -1,4 +1,4 @@
-FROM mrchypark/tfr-baseimage:1.0.0-gpu-py3
+FROM mrchypark/tfr-baseimage:1.0.0-cpu-py3
 MAINTAINER ChanYub Park <mrchypark@gmail.com>
 
 #add repository and update the container
