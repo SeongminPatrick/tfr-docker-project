@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y -q r-base \
                                               libcurl4-openssl-dev \
                                               libssl1.0.0 \
                                               libedit2 \
+                                              git \
+                                              wget \
+                                              nano \
                   && apt-get clean \
                   && rm -rf /tmp/* /var/tmp/* \
                   && rm -rf /var/lib/apt/lists/*
