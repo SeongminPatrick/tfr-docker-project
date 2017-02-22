@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y -q r-base \
                                               git \
                                               wget \
                                               nano \
+                                              libssh2-1-dev \
                   && apt-get clean \
                   && rm -rf /tmp/* /var/tmp/* \
                   && rm -rf /var/lib/apt/lists/*
