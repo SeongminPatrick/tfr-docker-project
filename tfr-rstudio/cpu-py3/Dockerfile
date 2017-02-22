@@ -44,6 +44,11 @@ RUN chmod +x /etc/service/rserver/run \
 #additionsl tools to be use internally
 RUN (adduser --disabled-password --gecos "" guest && echo "guest:guest"|chpasswd)
 
+#set tensorflow package
+RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile \
+    && Rscript -e "install.packages('devtools')" \
+    && Rscript -e "devtools::install_github('rstudio/tensorflow')" \
+    
 # to allow access from outside of the container to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server.
 EXPOSE 8787
