@@ -78,8 +78,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN pip install --no-cache-dir virtualenv tensorflow 
 
 RUN apt-get update && apt-get install -y libssh2-1-dev && \
-    Rscript -e 'install.packages(c("codetools","devtools")); devtools::install_github("rstudio/tensorflow")' && \
-    Rscript -e "library(tensorflow); install_tensorflow()"
+	Rscript -e 'install.packages(c("codetools","devtools")); devtools::install_github("rstudio/tensorflow")'
