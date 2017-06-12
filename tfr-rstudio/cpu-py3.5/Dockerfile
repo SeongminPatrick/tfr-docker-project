@@ -1,6 +1,7 @@
 FROM rocker/rstudio:latest
 MAINTAINER ChanYub Park <mrchypark@gmail.com>
 
+# ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
 # http://bugs.python.org/issue19846
@@ -14,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
-ENV PYTHON_VERSION 3.4.6
+ENV PYTHON_VERSION 3.5.3
 
 RUN set -ex \
 	&& buildDeps=' \
@@ -83,7 +84,7 @@ RUN set -ex; \
 			\( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
-
+	
 RUN pip install --no-cache-dir virtualenv tensorflow 
 
 RUN apt-get update && apt-get install -y libssh2-1-dev && \
