@@ -1,7 +1,6 @@
 FROM rocker/rstudio:latest
 MAINTAINER ChanYub Park <mrchypark@gmail.com>
 
-# ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
 # http://bugs.python.org/issue19846
@@ -14,8 +13,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		tk \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GPG_KEY C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF
-ENV PYTHON_VERSION 2.7.13
+ENV GPG_KEY 97FC712E4C024BBEA48A61ED3A5CA953F73C700D
+ENV PYTHON_VERSION 3.4.6
 
 RUN set -ex \
 	&& buildDeps=' \
@@ -39,8 +38,9 @@ RUN set -ex \
 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
 	&& ./configure \
 		--build="$gnuArch" \
+		--enable-loadable-sqlite-extensions \
 		--enable-shared \
-		--enable-unicode=ucs4 \
+		--without-ensurepip \
 	&& make -j "$(nproc)" \
 	&& make install \
 	&& ldconfig \
@@ -54,6 +54,13 @@ RUN set -ex \
 			\( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
 		\) -exec rm -rf '{}' + \
 	&& rm -rf /usr/src/python
+
+# make some useful symlinks that are expected to exist
+RUN cd /usr/local/bin \
+	&& ln -s idle3 idle \
+	&& ln -s pydoc3 pydoc \
+	&& ln -s python3 python \
+	&& ln -s python3-config python-config
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 9.0.1
@@ -77,8 +84,10 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
-# install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
-RUN Rscript -e 'install.packages("devtools"); devtools::install_github("rstudio/tensorflow")' && \
-    Rscript -e "library(tensorflow); install_tensorflow(gpu=T); sess = tf$Session(); hello <- tf$constant('Hello, TensorFlow!'); sess$run(hello)"
+RUN apt-get update && apt-get install -y libssh2-1-dev && \
+	Rscript -e 'install.packages(c("codetools","devtools")); devtools::install_github("rstudio/tensorflow")' && \
+    Rscript -e "library(tensorflow); install_tensorflow()"
+
+RUN	Rscript -e  "library(tensorflow); sess = tf$Session(); hello <- tf$constant('Hello, TensorFlow!'); sess$run(hello)"
